@@ -1,14 +1,21 @@
 package collections;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public class DuplicateItems {
+	
+	
 
 	public static void main(String[] args) {
 
-		retrieveValuesUsingArrayListMethod2();
+		retrieveValuesUsingHasTableMethod3();
 
 	}
 
@@ -68,7 +75,33 @@ public class DuplicateItems {
 		}
 	}
 
-	public static void retrieveValuesUsingHasMapMethod3() {
+	public static void retrieveValuesUsingHasTableMethod3() {
+		
+		Integer data[] = { 1, 2, 3, 6, 7, 1, 3, 9, 4 };
+		
+		// Third solution : using Hash table data structure to find duplicates 
+		System.out.println("Duplicate elements from array using hash map");
+		
+		Map<Integer,Integer> valuesAndCount = new HashMap();
+		
+		for(Integer values:data) {
+			Integer count = valuesAndCount.get(values);
+			if (count == null) {
+				valuesAndCount.put(values, 1);
+			}
+			else {
+				valuesAndCount.put(values, ++count);
+			}
+			}
+		
+		System.out.println(valuesAndCount.entrySet());
+		
+		Set<Entry<Integer, Integer>> entryset = valuesAndCount.entrySet();
+		for(Entry<Integer, Integer> entry: entryset) {
+			if(entry.getValue()>1) {
+				System.out.println("Duplicate element: " +entry.getKey());
+		}
+		}
 
 	}
 }
