@@ -79,23 +79,27 @@ public class DuplicateItems {
 
 		Map<Integer, Integer> valuesAndCount = new HashMap();
 
-		for (Integer values : data) {
-			Integer count = valuesAndCount.get(values);
+		for (Integer key : data) {
+			Integer count = valuesAndCount.get(key);
 			if (count == null) {
-				valuesAndCount.put(values, 1);
+				valuesAndCount.put(key, 1);
 			} else {
-				valuesAndCount.put(values, ++count);
+				valuesAndCount.put(key, ++count);
 			}
 		}
 
 		System.out.println(valuesAndCount.entrySet());
+		
+		valuesAndCount.forEach((x,y) -> {if (y > 1) {
+				System.out.println("Duplicate element: " + x);
+			}});
 
-		Set<Entry<Integer, Integer>> entryset = valuesAndCount.entrySet();
-		for (Entry<Integer, Integer> entry : entryset) {
-			if (entry.getValue() > 1) {
-				System.out.println("Duplicate element: " + entry.getKey());
-			}
-		}
+//		Set<Entry<Integer, Integer>> entryset = valuesAndCount.entrySet();
+//		for (Entry<Integer, Integer> entry : entryset) {
+//			if (entry.getValue() > 1) {
+//				System.out.println("Duplicate element: " + entry.getKey());
+//			}
+//		}
 
 	}
 }
