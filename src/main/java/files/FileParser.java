@@ -33,13 +33,13 @@ public class FileParser {
 		String lines;
 		while ((lines = reader.readLine()) != null) {
 			String[] sentence = lines.split("\\.");
-			
-			for (int a = 0; a <= sentence.length-1; a++) {
+
+			for (int a = 0; a <= sentence.length - 1; a++) {
 				String tempText = sentence[a];
-				System.out.println(tempText.toString());
+
 				if (tempText.contains(text)) {
-					writer.append(tempText +". ");
-					//writer.newLine();
+					writer.append(tempText + ". ");
+					// writer.newLine();
 				}
 
 			}
