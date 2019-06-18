@@ -32,10 +32,15 @@ public class FileParser {
 		BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
 		String lines;
 		while ((lines = reader.readLine()) != null) {
-
-			if (lines.contains(text)) {
-				writer.write(lines);
-				writer.newLine();
+			String[] sentence = lines.split("\\.");
+			
+			for (int a = 0; a <= sentence.length-1; a++) {
+				String tempText = sentence[a];
+				System.out.println(tempText.toString());
+				if (tempText.contains(text)) {
+					writer.append(tempText +". ");
+					//writer.newLine();
+				}
 
 			}
 
