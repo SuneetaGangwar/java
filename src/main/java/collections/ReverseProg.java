@@ -7,7 +7,7 @@ public class ReverseProg {
 
 	public static void main(String[] args) {
 
-		reverseNumber();
+		reverseStringPalindrome();
 	}
 
 	public static void reverseNumber() {
@@ -57,5 +57,28 @@ public class ReverseProg {
 		}
 
 	}
+	
+	public static void reverseStringPalindrome() {
+		String str = "kayak";
+		String reverseString = "";
+		System.out.println("The String is: " + str);
+		System.out.println("Reverse of String is: ");
+
+		//char[] charArray = str.toCharArray();
+		for (int a = str.length() - 1; a >= 0; a--) {
+			reverseString = reverseString+str.charAt(a);
+			//System.out.print(reverseString);
+		}
+		
+		System.out.print(reverseString +"\n");
+
+		if (str.equals(reverseString)) {
+			System.out.println("The String is Palindrome");
+		} else {
+			System.out.println('\n' + "The String is not Palindrome");
+		}
+
+	}
+
 
 }
