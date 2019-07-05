@@ -89,17 +89,19 @@ public class DuplicateItems {
 		}
 
 		System.out.println(valuesAndCount.entrySet());
-		
-		valuesAndCount.forEach((x,y) -> {if (y > 1) {
-				System.out.println("Duplicate element: " + x);
-			}});
 
-//		Set<Entry<Integer, Integer>> entryset = valuesAndCount.entrySet();
-//		for (Entry<Integer, Integer> entry : entryset) {
-//			if (entry.getValue() > 1) {
-//				System.out.println("Duplicate element: " + entry.getKey());
-//			}
-//		}
+		valuesAndCount.forEach((x, y) -> {
+			if (y > 1) {
+				System.out.println("Duplicate element: " + x);
+			}
+		});
+
+		// Set<Entry<Integer, Integer>> entryset = valuesAndCount.entrySet();
+		// for (Entry<Integer, Integer> entry : entryset) {
+		// if (entry.getValue() > 1) {
+		// System.out.println("Duplicate element: " + entry.getKey());
+		// }
+		// }
 
 	}
 }
